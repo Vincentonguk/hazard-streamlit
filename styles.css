@@ -1,0 +1,96 @@
+:root{
+  --blue:#5B9CF2; --blue-hover:#3F86EA; --blue-subtle:#EAF3FF;
+  --bg:#F6FAFF; --surface:#EAF2FB; --text:#0F172A; --text-soft:#334155;
+  --border:#D8E6FA; --radius:14px; --shadow:0 8px 18px rgba(16,24,40,.06);
+  --good:#10B981; --warn:#F59E0B; --bad:#EF4444;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+html,body,[class^=block-container]{
+  font-family:'Inter',system-ui,sans-serif;
+}
+
+section.main > div.block-container{
+  padding-top:2rem;
+  padding-bottom:3rem;
+}
+
+/* Título principal mais clean */
+.h1{
+  font-size:1.8rem;
+  font-weight:700;
+  color:var(--text);
+  margin:0 0 .5rem;
+}
+.subtle{color:var(--text-soft)}
+.separator{height:1px;background:var(--border);margin:1rem 0;}
+
+/* Cards */
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:1rem 1.2rem;
+}
+.card h3{margin:0 0 .4rem;color:var(--text);font-weight:700}
+.card p{margin:.25rem 0 0;color:var(--text-soft)}
+
+/* Botões */
+.stButton>button{
+  background:var(--blue)!important;
+  color:#fff!important;
+  border:1px solid var(--blue)!important;
+  border-radius:calc(var(--radius)+6px)!important;
+  padding:.6rem 1.1rem!important;
+  font-weight:700!important;
+  box-shadow:var(--shadow)!important;
+  transition:transform .08s, background .15s, box-shadow .15s;
+}
+.stButton>button:hover{
+  background:var(--blue-hover)!important;
+  transform:translateY(-1px);
+}
+.stButton>button:active{
+  transform:translateY(0);
+  box-shadow:0 0 0 2px var(--blue-subtle) inset!important;
+}
+
+/* Métricas mais legíveis em claro */
+[data-testid="stMetric"]{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:10px 12px;
+  box-shadow:var(--shadow);
+}
+
+/* Tabelas com borda suave */
+[data-testid="stTable"] table{
+  border:1px solid var(--border);
+}
+
+/* Badges */
+.badge{
+  display:inline-flex;
+  gap:.4rem;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  font-size:.85rem;
+  border:1px solid var(--border);
+  background:var(--blue-subtle);
+  color:var(--text);
+}
+.badge.good{
+  background:rgba(16,185,129,.12);
+  border-color:rgba(16,185,129,.25);
+}
+.badge.warn{
+  background:rgba(245,158,11,.12);
+  border-color:rgba(245,158,11,.25);
+}
+.badge.bad{
+  background:rgba(239,68,68,.12);
+  border-color:rgba(239,68,68,.25);
+}
